@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -19,7 +21,9 @@ import java.util.stream.Collectors;
  */
 public class ParserUtil {
     
-    public static List<Log> parse(String urlFile){
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    
+    public static List<Log> parse(String urlFile) throws IOException{
     	
     	try {
 			List<Log> logs = Files.lines(Paths.get(urlFile)).map(line->line.split("\\|"))
@@ -35,8 +39,8 @@ public class ParserUtil {
 			
 			return logs;
 		} catch (IOException e) {						
-			e.printStackTrace();
-			return null;		
+			logger.error(e.getMessage(), e);
+			throw e;		
 		}
                   
     } 
