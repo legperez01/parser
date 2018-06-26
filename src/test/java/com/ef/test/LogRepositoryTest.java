@@ -1,6 +1,6 @@
 package com.ef.test;
 
-import com.ef.LogRepository;
+import com.ef.repository.LogRepository;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
