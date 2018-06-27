@@ -5,8 +5,8 @@
  */
 package com.ef.test;
 
-import com.ef.LogRepository;
-import com.ef.LogService;
+import com.ef.repository.LogRepository;
+import com.ef.service.LogService;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;

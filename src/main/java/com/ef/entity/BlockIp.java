@@ -1,4 +1,4 @@
-package com.ef;
+package com.ef.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

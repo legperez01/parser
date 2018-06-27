@@ -1,5 +1,6 @@
 package com.ef;
 
+import com.ef.service.LogService;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,14 +16,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application implements ApplicationRunner {
+public class Parser implements ApplicationRunner {
   
     @Autowired
     LogService logService;    
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(Parser.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Parser.class, args);
     }
 
     @Override
@@ -70,6 +71,8 @@ public class Application implements ApplicationRunner {
                     + "--threshold='valid integer'");
         } catch(IOException e){
             logger.error(e.getMessage(), e);
+        }catch (Exception e){
+            logger.error(e.getMessage(), e);          
         }
             
     }   

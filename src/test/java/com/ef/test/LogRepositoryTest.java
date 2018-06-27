@@ -17,11 +17,13 @@ import org.junit.runners.Parameterized;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.TestContextManager;
 
 @RunWith(Parameterized.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
+@ComponentScan(basePackages = "com.ef")
 public class LogRepositoryTest {
 
     @Autowired

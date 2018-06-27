@@ -5,6 +5,7 @@
  */
 package com.ef;
 
+import com.ef.entity.Log;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,7 +22,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ParserUtil {
     
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(Parser.class);
     
     public static List<Log> parse(String urlFile) throws IOException{
     	
